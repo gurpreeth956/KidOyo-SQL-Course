@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    background: #A0C5E8;
+}
+
+.listofdata {
+    margin: 0 auto;
+    padding: 10px 20px 10px 20px;
+}
+
+.addingperson{
+    text-align: center;
+    margin: 0 auto;
+    background: #A0C5E8;
+    padding: 10px 20px 10px 20px;
+}
+
+.addingdata {
+    text-align: center;
+    margin: 0 auto;
+    background: #A0C5E8;
+    padding: 10px 20px 10px 20px;
+}
+
+.eachitem {
+    text-align: center;
+    outline: solid;
+    outline-color: blue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.itemtext {
+    float: left;
+    padding: 30px 20px 20px 250px;
+}
+
+.actualimage {
+    text-align:right;
+}
+
+.listofpeople {
+    text-align: center;
+}
+
+.eachperson {
+    display: block;
+}
+
+input {
+    text-align: center;
+    height: 30px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: 0px;
+    outline: none;
+}
+
+button{
+    text-align: center;
+    height: 30px;
+	width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    outline: none;
+}
+
+button:hover{
+    background-color: #D3D3D3;
+}

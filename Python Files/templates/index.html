@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KidOYO SQL Database!</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <h1>FAMILY & FRIENDS WISHLIST</h1>
+
+    <div class="addingperson">
+        <h2>ADD A PERSON</h2>
+        <form method="POST" action="">
+            <input id="inputPerson" placeholder="Person Name" name="person"
+               value="{{ request.form.person }}"  required>
+            <input id="inputGender" placeholder="Gender" name="gender"
+               value="{{ request.form.gender }}"  required>
+            <button type = "submit" name = "addperson">Upload</button>
+        </form>
+    </div>
+
+    <div class="addingdata">
+        <h2>ADD AN ITEM</h2>
+        <form method="POST" action="" enctype = "multipart/form-data">
+            <input id="inputName" class="form-control" placeholder="Item Name" name="name"
+               value="{{ request.form.name }}" autofocus required>
+            <input id="inputDesc" class="form-control" placeholder="Description" name="desc"
+               value="{{ request.form.desc }}" autofocus>
+            <input id="choosePerson" class="form-control" placeholder="Enter Person" name="chooseper"
+               value="{{ request.form.chooseper }}" autofocus>
+            <input type = "file" name = "file">
+            <button type = "submit" name = "additem">Upload</button>
+        </form>
+    </div>
+
+    <div class="listofpeople">
+         <a href="/">Back To All Page</a>
+        {% if names != None %}
+        {% for name in names %}
+            <div class="eachperson">
+                <a href="/?category={{ name[0] }}">{{ name[0] }}</a>
+            </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+    <div class="listofdata">
+        {% if items != None %}
+        {% for item in items %}
+        <div class="eachitem">
+            <div class="itemtext">
+                <form method="POST" action="">
+                    <input type="hidden" name="itemID" value="{{ item[0] }}">
+                    <h2>Item ID: {{ item[0] }}</h2>
+                    <h2>Item Name: {{ item[1] }}</h2>
+                    <h2>Item Description: {{ item[3] }}</h2>
+                    <h2>Person: {{ item[4] }}</h2>
+                    <button type = "submit" name = "delete">DELETE</button>
+                </form>
+            </div>
+            <img class="actualimage" class="card-img-top" src="static/images/{{ item[2] }}"alt="" width="200px" height="200px"></a>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
